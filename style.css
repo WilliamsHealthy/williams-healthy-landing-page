@@ -334,9 +334,10 @@ h3 {
 }
 
 /* Sección "¿Quiénes somos?" */
-.section-quienes-somos {
-    background-color: var(--primary-color);
-    color: var(--white-color);
+/* **MODIFICADO PARA MEJORAR LA LEGIBILIDAD** */
+#quienes-somos { /* Usamos el ID para mayor especificidad */
+    background-color: var(--primary-color); /* Fondo verde oscuro */
+    color: var(--white-color); /* Texto blanco */
 }
 
 .quienes-somos-content {
@@ -361,8 +362,6 @@ h3 {
     font-size: 1.15em; /* Ligeramente más grande para mejor legibilidad */
     line-height: 1.85; /* Ajuste del interlineado para mejor flujo de lectura */
     font-weight: 300; /* Asegura un peso de fuente adecuado para el fondo oscuro */
-    /* Considera agregar text-shadow si el texto se "pierde" en fondos complejos,
-       pero en este caso con color sólido, no debería ser necesario. */
 }
 
 .quienes-somos-text strong {
