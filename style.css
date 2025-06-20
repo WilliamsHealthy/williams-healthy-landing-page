@@ -358,12 +358,16 @@ h3 {
 }
 
 .quienes-somos-text p {
-    font-size: 1.1em;
-    line-height: 1.8;
+    font-size: 1.15em; /* Ligeramente más grande para mejor legibilidad */
+    line-height: 1.85; /* Ajuste del interlineado para mejor flujo de lectura */
+    font-weight: 300; /* Asegura un peso de fuente adecuado para el fondo oscuro */
+    /* Considera agregar text-shadow si el texto se "pierde" en fondos complejos,
+       pero en este caso con color sólido, no debería ser necesario. */
 }
 
 .quienes-somos-text strong {
     color: var(--accent-color);
+    font-weight: 600; /* Asegura que el texto en negrita sea prominente */
 }
 
 .quienes-somos-image {
