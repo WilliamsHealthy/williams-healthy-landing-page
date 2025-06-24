@@ -592,3 +592,33 @@ h3 {
         font-size: 2em;
     }
 }
+}
+
+/* --- Media Query para pantallas pequeñas (móviles) --- */
+@media screen and (max-width: 768px) {
+    /* Aquí van los estilos específicos para pantallas con un ancho máximo de 768px */
+    /* Por ejemplo, podrías querer que tu menú de navegación se apile verticalmente */
+    .menu-navegacion {
+        flex-direction: column; /* Si tu menú usa flexbox, esto lo apila */
+        align-items: center;    /* Centra los ítems del menú apilado */
+    }
+
+    /* O que los textos sean un poco más pequeños */
+    body {
+        font-size: 16px;
+    }
+
+    /* Si tienes columnas, haz que se apilen */
+    .contenedor-columnas {
+        flex-direction: column;
+    }
+}
+
+/* --- Media Query para pantallas medianas (tablets) --- */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Aquí van los estilos específicos para pantallas entre 769px y 1024px */
+    /* Por ejemplo, ajustar el tamaño de algunas secciones o el padding */
+    .seccion-principal {
+        padding: 20px;
+    }
+}
