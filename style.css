@@ -1,8 +1,8 @@
 /* Variables de color */
 :root {
-    --primary-color: #2F4F4F; /* Verde Oscuro */
+    --primary-color: #1e3a3a; /* Verde Oscuro */
     --accent-color: #FF8C00; /* Naranja Cálido */
-    --light-bg-color: #F5F5DC; /* Beige Claro */
+    --light-bg-color: #ffffff; /* Beige Claro */
     --text-color: #333;
     --white-color: #fff;
     --gray-light: #eee;
@@ -73,7 +73,7 @@ body {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: color 0.3s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
 }
 
 .nav-menu ul li a:hover {
@@ -95,7 +95,7 @@ body {
     width: 100%;
     background-color: var(--primary-color);
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.42, 0, 1, -0.69);
 }
 
 .nav-menu.active {
@@ -122,7 +122,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #1e3a3a;
 }
 
 .hero-content {
