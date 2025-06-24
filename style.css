@@ -7,6 +7,9 @@
     --white-color: #fff;
     --gray-light: #eee;
     --gray-medium: #ccc;
+    /* Las variables --williams-green, --williams-green-dark, --black-color han sido eliminadas
+       ya que tus botones usan primary-color, accent-color, y white-color/text-color
+       para mantener la consistencia. */
 }
 
 /* Reset básico y tipografía */
@@ -139,40 +142,58 @@ body {
 }
 
 /* Botones Generales */
+.btn-primary,
+.btn-secondary,
+.btn-outline { /* Estos estilos base se aplican a todos los botones */
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    margin-top: 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem;
+    border: none; /* Por defecto, sin borde para facilitar la sobrescritura */
+}
+
 .btn-primary {
     background-color: var(--accent-color);
     color: var(--white-color);
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3); /* Sombra naranja */
 }
 
 .btn-primary:hover {
     background-color: #cc6f00; /* Naranja un poco más oscuro */
-    transform: translateY(-2px);
+    transform: translateY(-3px); /* Efecto "levantarse" */
+    box-shadow: 0 6px 15px rgba(255, 140, 0, 0.4); /* Sombra naranja más pronunciada */
 }
 
 .btn-secondary {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    border: none;
-    cursor: pointer;
+    background-color: var(--white-color); /* Fondo blanco */
+    color: var(--primary-color); /* Texto verde oscuro de tu marca */
+    border: 2px solid var(--primary-color); /* Borde verde oscuro */
+    box-shadow: 0 2px 5px rgba(255, 140, 0, 0.1); /* Sombra naranja sutil para estado normal */
 }
 
 .btn-secondary:hover {
-    background-color: #1e3a3a; /* Verde un poco más oscuro */
-    transform: translateY(-2px);
+    background-color: var(--primary-color); /* Fondo verde oscuro al pasar el ratón */
+    color: var(--white-color); /* Texto blanco al pasar el ratón */
+    transform: translateY(-3px); /* Efecto "levantarse" */
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.2); /* Sombra naranja más pronunciada */
+}
+
+.btn-outline {
+    background-color: transparent; /* Fondo transparente */
+    color: var(--primary-color); /* Texto verde oscuro */
+    border: 2px solid var(--primary-color); /* Borde verde */
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color); /* Fondo verde al pasar el ratón */
+    color: var(--white-color); /* Texto blanco al pasar el ratón */
+    transform: translateY(-3px); /* Efecto "levantarse" */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Mantenemos sombra negra si no se especificó naranja aquí */
 }
 
 /* Secciones Generales */
@@ -212,7 +233,7 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Mantiene los items en línea y los envuelve si no hay espacio */
 }
 
 .diferencia-item {
@@ -334,7 +355,6 @@ h3 {
 }
 
 /* Sección "¿Quiénes somos?" */
-/* **MODIFICADO PARA MEJORAR LA LEGIBILIDAD** */
 #quienes-somos { /* Usamos el ID para mayor especificidad */
     background-color: var(--primary-color); /* Fondo verde oscuro */
     color: var(--white-color); /* Texto blanco */
@@ -558,10 +578,8 @@ h3 {
         align-items: center;
     }
 
-    .diferencia-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+    /* .diferencia-grid - Se ha ELIMINADO la regla flex-direction: column; de aquí
+       para que las cajas se mantengan en línea y se envuelvan. */
 
     .diferencia-item,
     .product-card,
@@ -594,20 +612,20 @@ h3 {
 }
 
 /* --- Media Query para pantallas pequeñas (móviles) --- */
+/* Esta media query es redundante con la primera @media (max-width: 768px).
+   Se recomienda consolidar los estilos responsivos para evitar confusiones y sobreescrituras.
+   Por ahora, solo mantengo lo estrictamente necesario que no esté en la primera para evitar problemas.
+*/
 @media screen and (max-width: 768px) {
-    /* Aquí van los estilos específicos para pantallas con un ancho máximo de 768px */
-    /* Por ejemplo, podrías querer que tu menú de navegación se apile verticalmente */
     .menu-navegacion {
-        flex-direction: column; /* Si tu menú usa flexbox, esto lo apila */
-        align-items: center;    /* Centra los ítems del menú apilado */
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* O que los textos sean un poco más pequeños */
     body {
         font-size: 16px;
     }
 
-    /* Si tienes columnas, haz que se apilen */
     .contenedor-columnas {
         flex-direction: column;
     }
@@ -615,63 +633,7 @@ h3 {
 
 /* --- Media Query para pantallas medianas (tablets) --- */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    /* Aquí van los estilos específicos para pantallas entre 769px y 1024px */
-    /* Por ejemplo, ajustar el tamaño de algunas secciones o el padding */
     .seccion-principal {
         padding: 20px;
     }
-}
-
-.btn-primary,
-.btn-secondary,
-.btn-outline {
-    display: inline-block; /* Permite controlar width/height y padding, y los mantiene en línea */
-    padding: 1rem 2.5rem; /* Relleno interno generoso (arriba/abajo 1rem, izquierda/derecha 2.5rem) para que sean fáciles de clickear */
-    margin-top: 1.5rem; /* Espacio superior para separarlos de otros elementos */
-    border-radius: 50px; /* ¡Clave para el efecto "pill" o "píldora"! Un valor alto (o 50% para círculos/óvalos) redondea completamente los bordes. */
-    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
-    font-weight: 600; /* Texto en negrita para mayor visibilidad */
-    cursor: pointer; /* Cambia el cursor a una manita para indicar que es clickeable */
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    /* Transición suave para los efectos de hover:
-       - background-color: cambia el color de fondo suavemente
-       - color: cambia el color del texto suavemente
-       - transform: para el efecto de "levantarse"
-       - box-shadow: para el efecto de sombra */
-    font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande */
-}
-.btn-primary {
-    background-color: var(--williams-green); /* Color de fondo vibrante (verde de tu marca) */
-    color: var(--black-color); /* Texto blanco */
-    border: none; /* Sin borde */
-    box-shadow: 0 4px 10px rgba(114, 184, 77, 0.3); /* Sombra sutil para darle profundidad */
-}
-
-.btn-primary:hover {
-    background-color: var(--williams-green-dark); /* Tono más oscuro de verde al pasar el ratón */
-    transform: translateY(-3px); /* ¡Efecto "levantarse"! Mueve el botón 3px hacia arriba */
-    box-shadow: 0 6px 15px rgba(114, 184, 77, 0.4); /* Sombra más pronunciada al levantarse */
-}
-.btn-secondary {
-    background-color: var(--black-color); /* Fondo blanco */
-    color: var(--williams-green); /* Texto verde */
-    border: 2px solid var(--williams-green); /* Borde verde del mismo color que el texto */
-}
-
-.btn-secondary:hover {
-    background-color: var(--williams-green); /* Fondo verde al pasar el ratón */
-    color: var(--black-color); /* Texto blanco al pasar el ratón */
-    transform: translateY(-3px); /* Efecto "levantarse" */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra al levantarse */
-}.btn-outline {
-    background-color: transparent; /* Fondo transparente */
-    color: var(--williams-green); /* Texto verde */
-    border: 2px solid var(--williams-green); /* Borde verde */
-}
-
-.btn-outline:hover {
-    background-color: var(--williams-green); /* Fondo verde al pasar el ratón */
-    color: var(--black-color); /* Texto blanco al pasar el ratón */
-    transform: translateY(-3px); /* Efecto "levantarse" */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra al levantarse */
 }
