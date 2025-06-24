@@ -592,7 +592,6 @@ h3 {
         font-size: 2em;
     }
 }
-}
 
 /* --- Media Query para pantallas pequeñas (móviles) --- */
 @media screen and (max-width: 768px) {
@@ -621,4 +620,58 @@ h3 {
     .seccion-principal {
         padding: 20px;
     }
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+    display: inline-block; /* Permite controlar width/height y padding, y los mantiene en línea */
+    padding: 1rem 2.5rem; /* Relleno interno generoso (arriba/abajo 1rem, izquierda/derecha 2.5rem) para que sean fáciles de clickear */
+    margin-top: 1.5rem; /* Espacio superior para separarlos de otros elementos */
+    border-radius: 50px; /* ¡Clave para el efecto "pill" o "píldora"! Un valor alto (o 50% para círculos/óvalos) redondea completamente los bordes. */
+    text-decoration: none; /* Elimina el subrayado por defecto de los enlaces */
+    font-weight: 600; /* Texto en negrita para mayor visibilidad */
+    cursor: pointer; /* Cambia el cursor a una manita para indicar que es clickeable */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    /* Transición suave para los efectos de hover:
+       - background-color: cambia el color de fondo suavemente
+       - color: cambia el color del texto suavemente
+       - transform: para el efecto de "levantarse"
+       - box-shadow: para el efecto de sombra */
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande */
+}
+.btn-primary {
+    background-color: var(--williams-green); /* Color de fondo vibrante (verde de tu marca) */
+    color: var(--black-color); /* Texto blanco */
+    border: none; /* Sin borde */
+    box-shadow: 0 4px 10px rgba(114, 184, 77, 0.3); /* Sombra sutil para darle profundidad */
+}
+
+.btn-primary:hover {
+    background-color: var(--williams-green-dark); /* Tono más oscuro de verde al pasar el ratón */
+    transform: translateY(-3px); /* ¡Efecto "levantarse"! Mueve el botón 3px hacia arriba */
+    box-shadow: 0 6px 15px rgba(114, 184, 77, 0.4); /* Sombra más pronunciada al levantarse */
+}
+.btn-secondary {
+    background-color: var(--black-color); /* Fondo blanco */
+    color: var(--williams-green); /* Texto verde */
+    border: 2px solid var(--williams-green); /* Borde verde del mismo color que el texto */
+}
+
+.btn-secondary:hover {
+    background-color: var(--williams-green); /* Fondo verde al pasar el ratón */
+    color: var(--black-color); /* Texto blanco al pasar el ratón */
+    transform: translateY(-3px); /* Efecto "levantarse" */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra al levantarse */
+}.btn-outline {
+    background-color: transparent; /* Fondo transparente */
+    color: var(--williams-green); /* Texto verde */
+    border: 2px solid var(--williams-green); /* Borde verde */
+}
+
+.btn-outline:hover {
+    background-color: var(--williams-green); /* Fondo verde al pasar el ratón */
+    color: var(--black-color); /* Texto blanco al pasar el ratón */
+    transform: translateY(-3px); /* Efecto "levantarse" */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra al levantarse */
 }
